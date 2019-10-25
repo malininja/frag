@@ -1,9 +1,7 @@
 {
-  "name": "frag-mono",
+  "name": "exchange-rate",
   "version": "1.0.0",
   "main": "src/index.js",
-  "repository": "git@github.com:malininja/frag-mono.git",
-  "author": "Marin Masic <mamasic@gmail.com>",
   "license": "MIT",
   "scripts": {
     "start": "node ./src/index.js"
