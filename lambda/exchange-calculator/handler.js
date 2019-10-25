@@ -1,19 +1,11 @@
-const rp = require("request-promise");
-
-const exchangeModuleUrl = "https://2kg3pwydnf.execute-api.us-east-1.amazonaws.com/dev/exchange-rate/search";
+const exchangeRateService = require("./exchange-rate-service");
 
 async function calculate(event) {
   const { currency, date, amount } = JSON.parse(event.body);
   
-  const url = `${exchangeModuleUrl}/${currency}/${date}`;
-  let exchangeRateString;
-  try {
-    exchangeRateString = await rp(url);
-  } catch(e) {
-    if (e.statusCode === 404) return { statusCode: 404 };
-  }
-
-  const exchangeRate = JSON.parse(exchangeRateString);
+  const exchangeRate = await exchangeRateService.getExchangeRate(currency, date);
+  if (!exchangeRate) return { statusCode: 404 };
+  
   const exchangedAmount = exchangeRate.rate * amount;
 
   return {
