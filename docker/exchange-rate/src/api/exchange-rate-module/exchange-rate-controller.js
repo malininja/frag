@@ -35,4 +35,16 @@ function update(req, res, next) {
   return next();
 }
 
-module.exports = { getAll, get, insert, update };
+function search(req, res, next) {
+  const { currency, date } = req.params;
+  const exchangeRate = repository.search(currency, date);
+  if (!exchangeRate) {
+    res.sendStatus(404);
+  } else {
+    res.send(exchangeRate);
+  }
+
+  return next();
+}
+
+module.exports = { getAll, get, insert, update, search };
