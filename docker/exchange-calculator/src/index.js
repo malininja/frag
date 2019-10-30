@@ -9,7 +9,7 @@ const server = http.Server(app);
 app.use(bodyParser.json());
 app.use("/api", apiRouter);
 
-const port = process.env.PORT || 3002;
+const port = process.env.PORT || 3000;
 server.listen(port, () => {
   console.log(`Server now listening on port ${port}`);
 });
