@@ -62,3 +62,4 @@ typings/
 
 exchangeRates
 yarn.lock
+package-lock.json

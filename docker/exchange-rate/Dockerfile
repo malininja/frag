@@ -6,11 +6,8 @@ WORKDIR /usr/src/app
 
 # install dependencies
 COPY package.json ./
-#COPY package-lock.json ./
+COPY package-lock.json ./
 RUN npm install
-
-# in production environment use this for dependency installation
-# RUN npm ci --only=production
 
 # copy application source
 COPY . .
