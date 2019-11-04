@@ -3,11 +3,12 @@ version: '3'
 services:
   app:
     build: .
-    image: ninja/exchange-calculator
+    image: docker-examples/exchange-calculator
     ports:
       - 3002:3000
 
   exchange-rate:
-    image: ninja/exchange-rate
+    image: docker-examples/exchange-rate
     ports:
       - 3001:3000
+      
