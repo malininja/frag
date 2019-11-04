@@ -1,7 +1,7 @@
 const rp = require("request-promise");
 
 async function getExchangeRate(currency, date) {
-  const exchangeModuleUrl = "https://2kg3pwydnf.execute-api.us-east-1.amazonaws.com/dev/exchange-rate/search";
+  const exchangeModuleUrl = process.env.EXCHANGE_RATE_URL;
   const url = `${exchangeModuleUrl}/${currency}/${date}`;
   
   try {
