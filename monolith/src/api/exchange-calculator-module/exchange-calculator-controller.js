@@ -1,7 +1,7 @@
 const repository = require("../exchange-rate-module/exchange-rate-repository");
 
 function calculate(req, res, next) {
-  const { amount, currency, date } = req.query;
+  const { amount, currency, date } = req.body;
 
   const exchangeRate = repository.search(currency, date);
 

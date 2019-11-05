@@ -10,7 +10,7 @@ functions:
   calculate:
     handler: handler.calculate
     environment:
-      EXCHANGE_RATE_URL: https://2kg3pwydnf.execute-api.us-east-1.amazonaws.com/dev/exchange-rate/search 
+      EXCHANGE_RATE_URL: https://2kg3pwydnf.execute-api.us-east-1.amazonaws.com/dev/exchange-rate/search
     events:
       - http:
           path: exchange-calculator

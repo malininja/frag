@@ -3,6 +3,6 @@ const controller = require("./exchange-calculator-controller");
 
 const router = new express.Router();
 
-router.get("", controller.calculate);
+router.post("", controller.calculate);
 
 module.exports = router;
